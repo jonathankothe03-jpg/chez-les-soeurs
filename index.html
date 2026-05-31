@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chez les Soeurs</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav id="nav" class="nav">
+      <h1 class="titre">Chez les Soeurs</h1>
+      <!-- hamburger toggle placed outside the list so it is never covered by the overlay -->
+      <a
+        href="javascript:void(0);"
+        aria-label="menu"
+        id="navToggle"
+        role="button"
+        aria-expanded="false"
+        class="nav-toggle"
+      >
+        <i class="fa-solid fa-bars"></i>
+      </a>
+      <ul>
+        <li><a href="#">Accueil</a></li>
+        <li><a href="#horraires-table">Horraires</a></li>
+        <li><a href="page_menu.html">carte</a></li>
+        <li><a href="#reservations">Réservations</a></li>
+        <li><a href="#avis">Avis</a></li>
+        <li><a href="#contacts">Contact</a></li>
+      </ul>
+    </nav>
+
+    <section class="logo-section">
+      <div class="alignement">
+        <h1 class="logo"><img src="images/logo.jpg" alt="logo" /></h1>
+        <p class="thiel">Restaurant<span>Thiel sur Acolin</span></p>
+      </div>
+    </section>
+
+    <section id="horraires" class="ouvertures">
+      <table id="horraires-table" class="tableau">
+        <!-- <tr>
+          <th>Jour</th>
+          <th>Midi</th>
+          <th>Soir</th>
+        </tr> -->
+        <tr>
+          <td>Lundi</td>
+          <td class="ferme">Fermé</td>
+          <td class="ferme">Fermé</td>
+        </tr>
+        <tr>
+          <td>Mardi</td>
+          <td class="H">08:30 - 15:00</td>
+          <td class="ferme">Fermé</td>
+        </tr>
+        <tr>
+          <td>Mercredi</td>
+          <td class="H">08:30 - 15:00</td>
+          <td class="ferme">Fermé</td>
+        </tr>
+        <tr>
+          <td>Jeudi</td>
+          <td class="H">08:30 - 15:00</td>
+          <td class="ferme">Fermé</td>
+        </tr>
+        <tr>
+          <td>Vendredi</td>
+          <td class="H">08:30</td>
+          <td class="H">22:00</td>
+        </tr>
+        <tr>
+          <td>Samedi</td>
+          <td class="H">08:30</td>
+          <td class="H">22:00</td>
+        </tr>
+        <tr>
+          <td>Dimanche</td>
+          <td class="H">09:00 - 15:00</td>
+          <td class="ferme">Fermé</td>
+        </tr>
+      </table>
+      <div class="info">
+        <p><h1 class="bar">Bar</h1><h1 class="restaurant">Restaurant</h1><span class="ti">Climatisation <br>-<br>Terrasse<br>à<br>4 km du pal</span></p>
+      </div>
+      <iframe
+        class="maps"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d970.5716325388324!2d3.5775359687276733!3d46.52411955467554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f1150032147665%3A0x563ec9ae9ca1459b!2sChez%20les%20soeurs!5e0!3m2!1sfr!2snl!4v1779881212229!5m2!1sfr!2snl"
+        width="auto"
+        height="auto"
+        style="border: 5px solid black; border-radius: 15px"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </section>
+
+    <section class="photos">
+      <div class="photo">
+          <div class="photo1"></div>
+          <div class="photo2"></div>
+          <div class="photo3"></div>
+          <div class="photo4"></div>
+          <div class="photo5"></div>
+          <div class="photo6"></div>
+      </div>
+    </section>
+
+    <header id="voir-la-carte">
+      <div class="gauche">
+        <h1 id="chez-les-soeurs">Bienvenue chez les soeurs</h1>
+        <p class="description">
+          Venez découvrir notre restaurant familial, où la cuisine
+          traditionnelle rencontre une ambiance chaleureuse. Chez les soeurs,
+          nous vous offrons une expérience culinaire authentique, préparée avec
+          amour et des ingrédients frais. Que vous soyez à la recherche d'un
+          repas convivial en famille ou d'une soirée romantique, notre équipe
+          est là pour vous accueillir et vous faire sentir comme chez vous.
+          Rejoignez-nous pour savourer des plats délicieux et créer des
+          souvenirs inoubliables.
+        </p>
+        <button><a href="page_menu.html">VOIR LA CARTE</a></button>
+      </div>
+    </header>
+
+    <section id="reservations">
+      <div class="table">
+        <h1>Réserver votre table</h1>
+        <p class="description">
+          Chez les soeurs, nous sommes fiers de vous offrir un menu varié qui
+          ravira tous les palais. Nos plats sont préparés avec des ingrédients
+          frais et de qualité, mettant en valeur les saveurs authentiques de la
+          cuisine traditionnelle. Que vous soyez amateur de viande, végétarien
+          ou adepte de fruits de mer, notre menu propose une sélection de plats
+          délicieux pour satisfaire toutes les envies. Venez découvrir nos
+          spécialités et laissez-vous tenter par une expérience culinaire
+          inoubliable.
+        </p>
+        <button>RESERVER UNE TABLE</button>
+      </div>
+    </section>
+
+    <section id="menu">
+      <p class="mini-titre">Evenement</p>
+      <h2>Faite votre demande</h2>
+      <div class="cartes">
+        <div class="carte">
+          <h3>Anniversaire</h3>
+          <p>Voir</p>
+          <p class="prix">Tarif</p>
+        </div>
+        <div class="carte">
+          <h3>Club</h3>
+          <p>Voir</p>
+          <p class="prix">Tarif</p>
+        </div>
+        <div class="carte">
+          <h3>Entreprise</h3>
+          <p>Voir</p>
+          <p class="prix">Tarif</p>
+        </div>
+        <div class="carte">
+          <h3>Soirée</h3>
+          <p>Voir</p>
+          <p class="prix">Tarif</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="avis">
+      <h1>votres avis nous intéressent</h1>
+      <form class="formules">
+        <input type="text" placeholder="votre nom" />
+        <input type="email" placeholder="votre email" />
+        <textarea placeholder="votre avis"></textarea>
+        <button>envoyer</button>
+      </form>
+    </section>
+
+    <footer id="contacts">
+      <div class="column">
+        <h3>merci a vous</h3>
+        <p>© copyright chez les soeurs 2026 | Tous droits réservés</p>
+      </div>
+      <div class="column1">
+        <h3>recrutement</h3>
+        <p>postuler pour un emploi</p>
+        <p>job étudiant</p>
+        <p>stage</p>
+      </div>
+      <div class="column2">
+        <h3>contact</h3>
+        <p>email: contact@chezlessoeurs.com</p>
+        <p>téléphone: 01 23 45 67 89</p>
+      </div>
+      <div class="column3">
+        <h3>adresse</h3>
+        <p>2 ROUTE DE CHAPEAU</p>
+        <p>03230 Thiel-sur-Acolin</p>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        var nav = document.getElementById('nav');
+        var toggle = document.getElementById('navToggle');
+        function mobile() {
+          if (!nav) return;
+          // basculer l'état responsive et l'état open pour l'animation
+          nav.classList.toggle('responsive');
+          nav.classList.toggle('open');
+          if (toggle) {
+            var expanded = toggle.getAttribute('aria-expanded') === 'true';
+            toggle.setAttribute('aria-expanded', (!expanded).toString());
+          }
+        }
+        // expose for inline onclick fallback
+        window.mobile = mobile;
+
+        if (toggle) {
+          // click support
+          toggle.addEventListener('click', function (e) {
+            e.preventDefault();
+            mobile();
+          });
+          // keyboard support
+          toggle.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              mobile();
+            }
+          });
+        }
+
+        // close menu after clicking a nav link (ignore the toggle itself)
+        if (nav) {
+          var links = nav.querySelectorAll('ul li a:not(#navToggle)');
+          Array.prototype.forEach.call(links, function (a) {
+            a.addEventListener('click', function () {
+              if (nav.classList.contains('responsive')) {
+                mobile();
+              }
+            });
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>

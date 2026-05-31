@@ -1,0 +1,955 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Splash&family=The+Nautigal:wght@400;700&display=swap');
+
+:root {
+  --orange: #ffba4a89;
+  --orangeor: #ffba4a;
+  --grey: #9a9696;
+  --bleu: #061626;
+  --red: rgba(56, 7, 7, 0.8);
+  --nav-height: 80px; /* hauteur de la barre de navigation utilisée en responsive */
+}
+
+/* global box-sizing to avoid width+paddings causing overflow */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ensure the mobile toggle is hidden by default on desktop
+   and only shown inside the responsive media query */
+.nav-toggle,
+#navToggle {
+  display: none !important;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  /* padding: 0px 1% 0 1%; */
+  color: white;
+  background-color: var(--bleu);
+}
+
+/* smooth scrolling and offset for anchors under sticky nav */
+html {
+  scroll-behavior: smooth;
+  --res: calc(0.01 * 10vmin);
+}
+
+#reservations {
+  /* reserve space equal to nav height (ajuste si besoin) */
+  scroll-margin-top: 150px;
+}
+
+#horraires-table {
+  scroll-margin-top: 100px;
+}
+
+/*------------- barre de navigation -------------*/
+
+nav h1 img {
+  max-width: 40px;
+  width: auto;
+  height: auto;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: var(--orange) 5px solid;
+}
+
+nav h1 {
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav .titre {
+  font-family: 'The Nautigal', cursive;
+  font-size: 60px;
+  color: var(--orange);
+  text-shadow: 2px -2px 0px rgb(255 255 255);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  padding: 0px 10px;
+  border-radius: 0px 0px 15px 15px;
+  border: 1px solid var(--orange);
+  top: 0px;
+  /* z-index pour empilement du nav.
+     Note : valeur personnalisée 1315 (vous l'avez augmentée pour
+     résoudre un problème d'affichage). La hiérarchie recommandée
+     est : nav (par ex. 1000) < overlay/menu (2000) < toggle (2100).
+     Conservez 1315 si ça fonctionne pour vous. */
+  z-index: 1000;
+  background-color: black;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0; /* reset padding par défaut du navigateur (souvent 40px) */
+}
+
+nav ul li {
+  margin-right: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+nav ul li:hover {
+  color: var(--orange);
+}
+
+nav ul a {
+  color: inherit;
+  text-decoration: none;
+}
+
+nav ul #label {
+  display: none;
+}
+
+/*------------- section class:ouvertures / id:horraires -------------*/
+
+.logo-section H1 img {
+  width: 400px;
+  height: auto;
+  border-radius: 50%;
+  border: 8px solid var(--orange);
+  box-shadow: 0px 0px 20px 10px #9fefff73;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.logo-section p {
+  font-family: 'The Nautigal', cursive;
+  font-size: calc(240 * var(--res));
+  color: var(--orange);
+  text-shadow: 2px -2px 0px rgb(255 255 255);
+  margin-top: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.logo-section .thiel span {
+  font-size: 0.4em;
+}
+
+.logo-section .alignement .thiel {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.alignement {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+section.logo-section {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 0px 0px 0px;
+}
+
+/* ---------- tableau heure maps ---------- */
+
+.tableau {
+  text-align: center;
+  border: black 4px solid;
+  border-radius: 15px;
+}
+
+.maps {
+  width: auto;
+  height: 100%;
+  border-radius: 15px;
+}
+
+/* ensure media like images and iframes never exceed their container */
+img,
+iframe,
+.maps {
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+table {
+  border-spacing: 4px;
+  width: 100%;
+  height: 100%;
+  font-size: 1.3em;
+  background-color: white;
+}
+
+.tableau th,
+.tableau td {
+  color: var(--orangeor);
+}
+
+.tableau .H {
+  color: white;
+}
+
+.tableau .ferme {
+  color: black;
+}
+
+.ouvertures {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* trois colonnes sur grand écran */
+  grid-auto-rows: auto;
+  grid-column-gap: 20px;
+  grid-row-gap: 8px;
+  align-items: center;
+  justify-items: center;
+}
+
+.ouvertures th,
+.ouvertures td {
+  border: 4px solid black;
+  padding: 8px; /* espacement réduit */
+  background-color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+}
+
+.ouvertures h1 {
+  font-family: 'The Nautigal', cursive;
+  font-size: 2em;
+  color: var(--orangeor);
+  text-shadow: 2px -2px 0px rgb(255 255 255);
+  margin: 0px;
+}
+
+.ouvertures span {
+  text-shadow: 2px -2px 0px rgb(255 255 255);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.info .bar,
+.info .restaurant {
+  font-size: 6em;
+}
+
+.info .ti {
+  font-size: 4em;
+  font-family: 'The Nautigal', cursive;
+  color: var(--orangeor);
+  text-shadow: 2px -1px 9px #9fefff;
+}
+
+span.ti {
+  padding: 40px 0px;
+}
+
+.bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.restaurant {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* ----------------- fin tableau horraires googlemaps ------------------*/
+
+/* ------------------- espace photos ----------------------- */
+
+.photos {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 100px 0;
+}
+
+.photo {
+  background-color: var(--red);
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-columns: repeat(6, auto);
+  grid-template-rows: repeat(4, auto);
+  height: 400px;
+  border-bottom: 2px solid var(--orange);
+  border-top: 2px solid var(--orange);
+}
+
+.photo .photo1 {
+  grid-column: 1 / 1;
+  grid-row: 2 / 4;
+  background-image: url(images/dessert.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.photo .photo2 {
+  grid-column: 2 / 2;
+  grid-row: 2 / 4;
+  background-image: url(images/resto\ interrieur.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.photo .photo3 {
+  grid-column: 3 / 3;
+  grid-row: 2 / 4;
+  background-image: url(images/dessert_2.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.photo .photo4 {
+  grid-column: 4 / 4;
+  grid-row: 2 / 4;
+  background-image: url(images/resto\ terrasse.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.photo .photo5 {
+  grid-column: 5 / 5;
+  grid-row: 2 / 4;
+  background-image: url(images/dessert3.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.photo .photo6 {
+  grid-column: 6 / 6;
+  grid-row: 2 / 4;
+  background-image: url(images/dehor.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+/* header */
+
+header {
+  margin-top: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('images/resto\ bar.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: auto;
+  border-top: var(--orange) 5px solid;
+  border-bottom: var(--orange) 5px solid;
+  /* border-radius: 15px; */
+  box-sizing: border-box;
+  box-shadow: inset 0px 0px 50px 50px #000;
+}
+
+#chez-les-soeurs {
+  font-family: 'The Nautigal', cursive;
+  font-size: calc(150 * var(--res));
+  color: var(--orange);
+  text-shadow: 2px -2px 0px rgb(255 255 255);
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#voir-la-carte {
+  margin-top: 0px;
+}
+
+h1#chez-les-soeurs {
+  margin: 0px;
+  /* padding: 0px 50px; */
+}
+
+header .gauche {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0px;
+  border-radius: 15px;
+  /* margin: 5% 5% 5% 5%; */
+  text-align: center;
+}
+
+.gauche .description {
+  color: white;
+  font-size: 18px;
+  margin-inline: 10%;
+  line-height: 2.5;
+}
+
+header .gauche #chez-les-soeurs .description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+header .gauche button a {
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: calc(400 * var(--res));
+  height: calc(100 * var(--res));
+}
+
+header button {
+  margin: 0;
+  padding: 0;
+}
+
+header .gauche button {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: var(--orangeor);
+  border: 5px solid var(--orangeor);
+  box-shadow: 0px 0px 20px 10px #9fefff73;
+  border-radius: 15px;
+  margin: 50px 0;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+header .gauche button:hover {
+  background-color: var(--orangeor);
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+}
+
+/*------------- section reservation id: reservations class: descriptions -------------*/
+
+section .table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#reservations {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
+  border: 1px solid var(--orange);
+  margin: 200px 0px 200px 0px;
+  padding: 20px;
+}
+
+#reservations .description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  line-height: 2;
+}
+
+#reservations h1 {
+  font-family: 'The Nautigal', cursive;
+  font-size: calc(150 * var(--res));
+  color: var(--orange);
+  text-shadow: 2px -2px 0px rgb(255 255 255);
+  margin: 0px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.description {
+  color: white;
+  font-size: 20px;
+  margin-inline: 10%;
+  line-height: 1.5;
+}
+
+#reservations button {
+  background-color: inherit;
+  color: var(--orange);
+  border: 5px solid var(--orangeor);
+  box-shadow: 0px 0px 20px 10px #9fefff73;
+  border-radius: 15px;
+  padding: 20px 100px;
+  margin: 50px 0;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#reservations button:hover {
+  background-color: var(--orange);
+  color: black;
+  font-size: 20px;
+}
+
+/* ----------- section menu id: menu class: mini-titre -------------*/
+
+#menu .mini-titre {
+  font-size: 3em;
+  color: var(--orange);
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.mini-titre {
+  color: black;
+  font-size: 25px;
+}
+
+#menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
+  border: 1px solid var(--orange);
+}
+
+#menu .cartes {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+  padding: 40px 0px 40px 0px;
+  color: white;
+  font-size: 20px;
+}
+
+#menu .cartes .carte {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--orange);
+  border-radius: 10px;
+  width: 150px;
+  height: 200px;
+  padding: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#avis {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
+  border: 1px solid var(--orange);
+}
+
+.formules {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 20px;
+  width: 100%;
+}
+
+.formules textarea {
+  width: 80%;
+  height: 100px;
+  padding: 10px;
+  font-size: 2em;
+  display: flex;
+}
+
+.formules input,
+textarea {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1.2em;
+  border: 1px solid var(--orange);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.formules button {
+  background-color: inherit;
+  color: var(--orange);
+  border: 5px solid var(--orangeor);
+  box-shadow: 0px 0px 20px 10px #9fefff73;
+  border-radius: 15px;
+  padding: 20px 100px;
+  margin: 50px 0;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.formules button:hover {
+  background-color: var(--orange);
+  color: black;
+  font-size: 20px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  margin-top: 100px;
+}
+
+@media screen and (max-width: 1000px) {
+  .ouvertures {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    gap: 12px;
+    padding: 10px 0;
+    align-items: start;
+    justify-items: stretch;
+  }
+
+  .maps {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    max-height: 60vh;
+    margin-top: 12px;
+    order: 3;
+  }
+
+  .tableau {
+    order: 2;
+    /* make the table container scrollable on small screens to avoid overflow */
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 4px;
+    font-size: 1em;
+  }
+
+  .info {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 820px) {
+  h1#chez-les-soeurs {
+    margin-top: 20%;
+    padding: 0px 70px;
+  }
+
+  .photo1,
+  .photo2,
+  .photo3,
+  .photo4,
+  .photo5,
+  .photo6 {
+    display: none;
+  }
+
+  /* Design responsive pour écrans de largeur ≤ 715px */
+  /* prevent small horizontal overflow on mobile (safe guard) */
+  /* allow sticky to work: ensure vertical overflow is visible on ancestors
+     but keep horizontal safeguards on media elements */
+  html,
+  body {
+    overflow-x: hidden; /* keep horizontal overflow hidden to avoid scrollbars */
+    overflow-y: visible; /* allow sticky positioning to function */
+  }
+  html,
+  body {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    padding: 0 4%;
+    max-width: auto;
+    margin: 0;
+  }
+  /* hide logo in responsive and let the title replace it */
+  nav h1 img {
+    display: none;
+  }
+
+  /* masquer tous les éléments de navigation sauf le hamburger */
+  nav ul li {
+    display: none;
+  }
+  /* show the toggle in responsive */
+  .nav-toggle,
+  #navToggle {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: var(--orange);
+    padding: 8px 10px;
+    text-decoration: none;
+    background: transparent;
+    border-radius: 6px;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 4000; /* ensure it stays above the menu overlay */
+  }
+  /* augmenter la cible cliquable sur mobile */
+  .nav-toggle i,
+  #navToggle i {
+    pointer-events: none; /* l'icône ne doit pas interférer avec le clic */
+  }
+
+  /* rendre la barre de navigation fixe sur mobile pour garantir qu'elle reste visible */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    height: var(--nav-height);
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    gap: 12px;
+  }
+
+  /* décaler le contenu sous la nav fixe */
+  body {
+    padding-top: var(--nav-height);
+  }
+
+  /* menu mobile simple : afficher la liste en colonne quand nav a la classe .responsive */
+  nav.responsive ul li {
+    display: block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background: transparent;
+  }
+
+  /* show a compact title inside the fixed nav on mobile; let it flex between logo and toggle */
+  .titre {
+    display: block;
+    /* responsive font: grows with viewport but stays within bounds */
+    font-size: clamp(1rem, 3.5vw, 1.2rem);
+    margin: 0 12px;
+    color: var(--orange);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1 1 auto; /* allow the title to grow/shrink between logo and toggle */
+    min-width: 0; /* necessary for flex truncation to work */
+    order: 0; /* put title before the ul */
+    text-align: left;
+  }
+
+  /* hide logo if nav has class .no-logo (keeps HTML unchanged) */
+  nav.no-logo h1 img {
+    display: none;
+  }
+
+  /* adjust spacing when logo hidden */
+  nav.no-logo .titre {
+    margin-left: 4px;
+    max-width: calc(100% - 80px);
+  }
+
+  nav.responsive ul {
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    width: auto;
+    height: calc(100vh - var(--nav-height));
+    display: none; /* caché par défaut */
+    flex-direction: column;
+    gap: 6px;
+    align-items: stretch;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 2000;
+    border: 3px solid var(--orange);
+    border-radius: 25px;
+  }
+
+  /* ensure the inline nav list (when closed) stays at the right edge so the title has space */
+  nav > ul {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    padding: 0;
+  }
+
+  /* when logo is hidden, allow the title to take more room */
+  nav.no-logo .titre {
+    max-width: calc(100% - 56px);
+  }
+
+  /* very small phones: reduce title font and shrink logo/toggle so the title fits */
+  @media screen and (max-width: 415px) {
+    .titre {
+      /* allow the title to scale down on very small screens */
+      font-size: clamp(0.75rem, 5.5vw, 0.95rem);
+      max-width: 100%;
+    }
+
+    /* if logo remains visible, make it smaller to free space */
+    nav h1 img {
+      display: inline-block;
+      height: calc(var(--nav-height) - 36px);
+      width: auto;
+      max-height: 36px;
+    }
+
+    /* shrink the burger/toggle target */
+    nav ul li#label a,
+    #navToggle {
+      font-size: 2rem;
+      padding: 4px 6px;
+    }
+
+    /* adjust title space when no-logo class not present */
+    nav .titre {
+      margin: 0 8px;
+      max-width: calc(100% - 48px);
+    }
+
+    nav.no-logo .titre {
+      max-width: calc(100% - 48px);
+    }
+  }
+
+  /* quand la nav est ouverte, afficher la liste (aucune animation) */
+  nav.responsive.open ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+  }
+
+  header {
+    display: block;
+    height: auto;
+    padding: 20px 10px;
+  }
+
+  /* ensure table and its cells wrap and don't force horizontal scroll */
+  nav + section .tableau table,
+  .tableau table,
+  table {
+    width: 100%;
+    max-width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+  }
+
+  .tableau th,
+  .tableau td,
+  table th,
+  table td {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+
+  header .gauche {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  #menu .cartes {
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+  }
+
+  #avis h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid var(--orange);
+    border-radius: 15px 15px 0 0;
+  }
+
+  footer .column,
+  footer .column1,
+  footer .column2,
+  footer .column3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    border: 2px solid var(--orange);
+    border-radius: 15px;
+  }
+}
