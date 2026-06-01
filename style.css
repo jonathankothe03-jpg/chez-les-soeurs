@@ -336,7 +336,7 @@ span.ti {
 }
 
 .card {
-  flex: 0 0 auto;
+  flex: 0 0 300px;
   width: 300px;
   border-radius: 25px;
 }
