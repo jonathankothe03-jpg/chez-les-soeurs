@@ -304,20 +304,20 @@ span.ti {
 
 /* ------------------- espace photos ----------------------- */
 
-/* .photos {
+.photos {
   background-color: var(--red);
   border-bottom: 2px solid var(--orange);
   border-top: 2px solid var(--orange);
-  width: 100%;
+  width: auto;
   height: 100%;
   margin: 100px auto;
   display: flex;
-} */
+}
 
 .carousel {
   display: flex;
   margin: 100px auto;
-  width: 100%;
+  width: auto;
   height: 50%;
   overflow-x: auto;
 }
