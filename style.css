@@ -304,52 +304,6 @@ span.ti {
 
 /* ------------------- espace photos ----------------------- */
 
-.photos {
-  background-color: var(--red);
-  border-bottom: 2px solid var(--orange);
-  border-top: 2px solid var(--orange);
-  width: 100%;
-  height: 100%;
-  margin: 100px auto;
-  display: flex;
-}
-
-.carousel {
-  display: flex;
-  margin: 100px auto;
-  width: 81%;
-  height: 50%;
-  overflow-x: auto;
-}
-
-.carousel::-webkit-scrollbar {
-  display: none;
-}
-
-.group {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding-right: 10px;
-  animation: spin 30s infinite linear;
-}
-
-.card {
-  flex: 0 0 300px;
-  width: 300px;
-  border-radius: 25px;
-}
-
-@keyframes spin {
-  from {
-    translate: 0;
-  }
-  to {
-    translate: -100%;
-  }
-}
-
 /* header */
 
 header {
@@ -382,7 +336,7 @@ header {
 }
 
 #voir-la-carte {
-  margin-top: 0px;
+  margin-top: 50px;
 }
 
 h1#chez-les-soeurs {
