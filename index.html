@@ -264,6 +264,22 @@
           });
         }
       })();
+(function(){
+  const track = document.querySelector('.photos .carousel .track');
+  if(!track) return;
+  function setDuration(pxPerSecond = 120) {
+    // distance à parcourir = largeur de la première group
+    const group = track.querySelector('.group');
+    if(!group) return;
+    // in case track width is 2x of visible area, we use group.scrollWidth
+    const distancePx = group.scrollWidth;
+    const durationSec = Math.max(3, distancePx / pxPerSecond);
+    track.style.animationDuration = durationSec + 's';
+  }
+  setDuration(120);
+  window.addEventListener('resize', ()=> setDuration(120));
+})();
+
     </script>
   </body>
 </html>

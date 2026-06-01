@@ -343,10 +343,11 @@ span.ti {
 
 @keyframes spin {
   from {
-    translate: 0;
+    transform: translateX(0);
   }
+
   to {
-    translate: -100%;
+    transform: translateX(-100%);
   }
 }
 
