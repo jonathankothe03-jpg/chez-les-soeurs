@@ -304,7 +304,7 @@ span.ti {
 
 /* ------------------- espace photos ----------------------- */
 
-.photos {
+/* .photos {
   background-color: var(--red);
   border-bottom: 2px solid var(--orange);
   border-top: 2px solid var(--orange);
@@ -312,12 +312,13 @@ span.ti {
   height: 100%;
   margin: 100px auto;
   display: flex;
-}
+} */
 
 .carousel {
   display: flex;
   margin: 100px auto;
   width: 100%;
+  height: 50%;
   overflow-x: auto;
 }
 
@@ -337,7 +338,6 @@ span.ti {
 .card {
   flex: 0 0 300px;
   width: 300px;
-  height: 300px;
   border-radius: 25px;
 }
 

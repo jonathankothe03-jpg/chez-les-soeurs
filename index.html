@@ -114,7 +114,7 @@
           <img class="card" src="images/dessert3.jpg" alt=""></img>
           <img class="card" src="images/resto bar.jpg" alt=""></img>
       </div>
-      <div aria-hidden="false" class="group">
+      <div aria-hidden="true" class="group">
         <!-- card -->
           <img class="card" src="images/assiette.jpg" alt=""></img>
           <img class="card" src="images/dehor.jpg" alt=""></img>
@@ -265,5 +265,16 @@
         }
       })();
     </script>
+
+    @media (max-width: 480px) {
+  .photos .carousel .group .card {
+    height: 200px;
+  }
+  .photos .carousel .track {
+    animation-duration: 16s; /* plus rapide si besoin sur mobile */
+  }
+}
+    </script>
+
   </body>
 </html>
