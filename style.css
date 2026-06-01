@@ -255,6 +255,10 @@ table {
   text-align: center;
 }
 
+.info p {
+  margin: 0px;
+}
+
 .info .bar,
 .info .restaurant {
   font-size: 6em;
@@ -264,6 +268,13 @@ table {
   font-size: 4em;
   font-family: 'The Nautigal', cursive;
   color: var(--orangeor);
+  text-shadow: 2px -1px 9px #9fefff;
+}
+
+.info .pal {
+  font-size: 1em;
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
   text-shadow: 2px -1px 9px #9fefff;
 }
 
@@ -294,63 +305,49 @@ span.ti {
 /* ------------------- espace photos ----------------------- */
 
 .photos {
-  display: grid;
-  grid-template-columns: 1fr;
-  margin: 100px 0;
-}
-
-.photo {
   background-color: var(--red);
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-auto-columns: repeat(6, auto);
-  grid-template-rows: repeat(4, auto);
-  height: 400px;
   border-bottom: 2px solid var(--orange);
   border-top: 2px solid var(--orange);
+  width: 100%;
+  height: 500px;
+  margin: 100px auto;
+  display: flex;
 }
 
-.photo .photo1 {
-  grid-column: 1 / 1;
-  grid-row: 2 / 4;
-  background-image: url(images/dessert.jpg);
-  background-size: cover;
-  background-position: center;
+.carousel {
+  display: flex;
+  margin: 100px auto;
+  width: 100%;
+  height: 300px;
+  overflow-x: auto;
 }
-.photo .photo2 {
-  grid-column: 2 / 2;
-  grid-row: 2 / 4;
-  background-image: url(images/resto\ interrieur.jpg);
-  background-size: cover;
-  background-position: center;
+
+.carousel::-webkit-scrollbar {
+  display: none;
 }
-.photo .photo3 {
-  grid-column: 3 / 3;
-  grid-row: 2 / 4;
-  background-image: url(images/dessert_2.jpg);
-  background-size: cover;
-  background-position: center;
+
+.group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  padding-right: 1em;
+  animation: spin 30s infinite linear;
 }
-.photo .photo4 {
-  grid-column: 4 / 4;
-  grid-row: 2 / 4;
-  background-image: url(images/resto\ terrasse.jpg);
-  background-size: cover;
-  background-position: center;
+
+.card {
+  flex: 0 0 auto;
+  width: 300px;
+  border-radius: 25px;
 }
-.photo .photo5 {
-  grid-column: 5 / 5;
-  grid-row: 2 / 4;
-  background-image: url(images/dessert3.jpg);
-  background-size: cover;
-  background-position: center;
-}
-.photo .photo6 {
-  grid-column: 6 / 6;
-  grid-row: 2 / 4;
-  background-image: url(images/dehor.jpg);
-  background-size: cover;
-  background-position: center;
+
+@keyframes spin {
+  from {
+    translate: 0;
+  }
+  to {
+    translate: -100%;
+  }
 }
 
 /* header */
@@ -682,15 +679,6 @@ footer {
   h1#chez-les-soeurs {
     margin-top: 20%;
     padding: 0px 70px;
-  }
-
-  .photo1,
-  .photo2,
-  .photo3,
-  .photo4,
-  .photo5,
-  .photo6 {
-    display: none;
   }
 
   /* Design responsive pour écrans de largeur ≤ 715px */
